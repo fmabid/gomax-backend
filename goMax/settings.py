@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,6 +85,9 @@ DATABASES = {
         'PASSWORD': '12345',
         'HOST': '127.0.0.1',
         'PORT': '',
+        # 'OPTIONS': {
+        #     'autocommit': True,
+        # },
     }
 }
 

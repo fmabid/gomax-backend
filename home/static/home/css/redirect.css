@@ -1,0 +1,50 @@
+body{
+    background-color: #3B5999;
+}
+
+.body-bg{
+    width: 700px;
+    height: auto;
+    background-color: white;
+    margin-top: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 6px;
+}
+
+.item{
+    width: auto;
+    height: auto;
+    padding: 2px;
+    border-right: 1px solid #D5D5DC;
+}
+
+.r-up{
+    margin-top: 25px;
+}
+
+.dmnd{
+    max-width: 50%;
+}
+
+.theArrow img{
+    max-width: 45%;
+    margin-top: 15px;
+}
+
+.vend img{
+    margin-top: 15px;
+    max-width: 80%;
+}
+
+.r-down{
+    margin-top: 15px;
+}
+
+.priceTxt{
+    font-size: 15px;
+}
+
+.txt-grey{
+    color: #8787ae;
+}

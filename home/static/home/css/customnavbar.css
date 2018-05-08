@@ -1,0 +1,29 @@
+.txt-nav-menu{
+    font-weight: bold;
+}
+
+.txt-nav-menu li a{
+    color: #757575 !important;
+}
+
+.txt-nav-menu .current a{
+    color: #060630 !important;
+}
+
+.nav-bg{
+    background-color: #060630;
+}
+
+.favorite{
+    display: inline;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.favorite a{
+    text-decoration: none;
+}
+
+.favorite img{
+    width: 20px;
+}

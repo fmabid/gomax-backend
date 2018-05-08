@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/customnavbar.css' %}"/>
+    {% block extra_css %}{% endblock %}
+
+
+
+    <script src="{% static 'home/js/jquery.min.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'home/js/bootstrap.js' %}"></script>
+    <script src="{% static 'home/js/customNav.js' %}"></script>
+</head>
+<body>
+
+<div class="navbar pb-0" id="logo">
+    <a class="navbar-brand text-center ml-auto mr-auto" href="#">
+        <img class="" src="{% static 'home/images/assets/compLogo.png' %}" width="70" alt="">
+    </a>
+</div>
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light px-5 py-0 bg-transparent">
+    <ul class="navbar-nav ml-auto mr-auto txt-nav-menu" id="myMenu">
+        <li class="nav-item mx-4 ">
+            <a class="nav-link" href="#">Shopping</a>
+        </li>
+        <li class="nav-item mx-4">
+            <a class="nav-link" href="#">Traveling</a>
+        </li>
+        <li class="nav-item mx-4">
+            <a class="nav-link" href="#">Restaurant</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="navbar nav-bg">
+    <div class="mx-5">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+    </div>
+
+    <div class="favorite mr-5">
+        <i class="fas fa-heart mr-1 text-white"></i>
+        <a href="#"><span class="text-white">My Favorites</span></a>
+    </div>
+</div>
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

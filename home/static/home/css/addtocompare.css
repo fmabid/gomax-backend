@@ -1,0 +1,89 @@
+.main-body, .suggestion {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: auto;
+    height: auto;
+}
+
+.selecting-section{
+    position: relative;
+    width: auto;
+}
+
+.selecting-section .card img{
+    position: relative;
+    padding-top: 8px;
+}
+
+.card-preprice{
+    font-size: 15px;
+}
+
+.card-price{
+    font-size: 25px;
+}
+
+.copm-btn-color{
+    background-color: #E3EFF9;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.srchbar-container{
+    position: relative;
+    padding: 8px;
+    background-color: #abc8ee;
+    border-radius: 5px;
+}
+
+.top-25{
+    position: relative;
+    top: 25%;
+}
+
+.border-top{
+    border-top: 1px solid gray;
+}
+
+
+/*********      Footer      ***********/
+
+.footer-bg{
+    position: relative;
+    background-color: #243a51;
+    color: white;
+}
+
+.footer-bg h6{
+    margin-bottom: 15px;
+}
+
+.footer-bg a{
+    color: white;
+    font-size: 15px;
+}
+
+.btn-floating {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-floating i {
+    display: inline-block;
+    width: inherit;
+    text-align: center;
+    color: #fff;
+}
