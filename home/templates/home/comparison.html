@@ -1,286 +1,245 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Comparison</title>
+{% extends 'home/base.html' %}
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/customnavbar.css"/>
-    <link rel="stylesheet" href="css/comparison.css"/>
+{% block extra_css %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'home/css/comparison.css' %}"/>
+{% endblock %}
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/customNav.js"></script>
-</head>
-<body>
-<div class="navbar pb-0" id="logo">
-    <a class="navbar-brand text-center ml-auto mr-auto" href="#">
-        <img class="" src="assets/compLogo.png" width="70" alt="">
-    </a>
-</div>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light px-5 py-0 bg-transparent">
-    <ul class="navbar-nav ml-auto mr-auto txt-nav-menu" id="myMenu">
-        <li class="nav-item mx-4 ">
-            <a class="nav-link" href="#">Shopping</a>
-        </li>
-        <li class="nav-item mx-4">
-            <a class="nav-link" href="#">Traveling</a>
-        </li>
-        <li class="nav-item mx-4">
-            <a class="nav-link" href="#">Restaurant</a>
-        </li>
-    </ul>
-</nav>
 
-<div class="navbar nav-bg">
-    <div class="mx-5">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        </form>
+{% block body %}
+    <div class="container-fluid pt-5">
+        <h4 class="text-capitalize ml-5">product comparison</h4>
+
+        <!--<div class="row">
+            <div class="col-md-5"></div>
+
+            <div class="col">
+                <div class="media">
+                    <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
+                    <div class="media-body">
+                        <h4>Media Middle</h4>
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="media">
+                    <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
+                    <div class="media-body">
+                        <h4>Media Middle</h4>
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <!--    Table   -->
+        <div class="tbl-margin">
+            <table class="table">
+                <caption class="mt-3">*As the basis of review(s) and features comparison the <a href="#">Apple Iphone X</a> is suggested
+                    <a href="#">smartphone</a> to buy.
+                </caption>
+
+                <tbody class="text-center">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">
+                        <div class="media px-5">
+                            <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
+                            <div class="media-body">
+                                <h5>Apple iphone x</h5>
+                                <p style="color: #6c757d">Starting from <a style="color: #005bd3"> $999 </a> </p>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="media px-5">
+                            <img src="assets/samsungs9.jpg" class="align-self-center mr-3" style="width:60px">
+                            <div class="media-body">
+                                <h4>Samsung galaxy S9</h4>
+                                <p style="color: #6c757d">Starting from <a style="color: #005bd3"> $799 </a> </p>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th scope="row" class="alert-info text-dark"> <Reviews> PRODUCT REVIEW </Reviews></th>
+                    <td class="alert-info">
+                        <fieldset class="rating">
+                            <input type="radio" id="star3" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star5" name="rating" value="3" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star6" name="rating" value="3" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4half" name="rating" value="2 and a half" /><label class="half" for="star4half" title="Pretty good - 2.5 stars"></label>
+                        </fieldset>
+                    </td>
+                    <td class="alert-info">
+                        <fieldset class="rating">
+                            <input type="radio" id="star3.1" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4.1" name="rating" value="4" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star5.1" name="rating" value="3" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4half.1" name="rating" value="2 and a half" /><label class="half" for="star4half" title="Pretty good - 2.5 stars"></label>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">THICKNESS</th>
+                    <td class="table-success">7 mm</td>
+                    <td>7.8 mm</td>
+                </tr>
+                <tr>
+                    <th scope="row">CPU SPEED</th>
+                    <td >2100 MHz</td>
+                    <td class="table-success">2800 MHz</td>
+                </tr>
+                <tr>
+                    <th scope="row">SCREEN SIZE</th>
+                    <td>5.1 in</td>
+                    <td class="table-success">5.5 in</td>
+                </tr>
+                <tr>
+                    <th scope="row">OS</th>
+                    <td class="table-success">iOS 11.3</td>
+                    <td>Android 7.0</td>
+                </tr>
+                <tr>
+                    <th scope="row">SECONDARY CAMERA</th>
+                    <td class="table-success">16 MP</td>
+                    <td>12 MP</td>
+                </tr>
+                <tr>
+                    <th scope="row">SIM</th>
+                    <td >Single SIM</td>
+                    <td class="table-success">Dual SIM</td>
+                </tr>
+                <tr>
+                    <th scope="row">BATTERY</th>
+                    <td>2600 mAH</td>
+                    <td class="table-success">3200 mAH</td>
+                </tr>
+                <tr>
+                    <th scope="row">WEIGHT</th>
+                    <td class="table-success">174 gms</td>
+                    <td >178 gms</td>
+                </tr>
+                <tr>
+                    <th scope="row">SCREEN RESOLUTION</th>
+                    <td >1125x2436</td>
+                    <td class="table-success">1440x2960</td>
+                </tr>
+                <tr>
+                    <th scope="row">RAM</th>
+                    <td >3 GB</td>
+                    <td class="table-success">4 GB</td>
+                </tr>
+                <tr>
+                    <th scope="row" >PIXEL DENSITY</th>
+                    <td class="table-success">531</td>
+                    <td >463</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mx-auto text-center">
+            <a role="button" href="redirectTo.html" class="btn btn-goto-shop my-5 font-weight-bold" aria-pressed="true">Go to shop</a>
+        </div>
+
     </div>
 
-    <div class="favorite mr-5">
-        <i class="fas fa-heart mr-1 text-white"></i>
-        <a class="" href="#"><span class="text-white">My Favorites</span></a>
-    </div>
-</div>
+    <footer class="footer-bg pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Shopping</strong>
+                    </h6>
 
-<div class="container-fluid pt-5">
-    <h4 class="text-capitalize ml-5">product comparison</h4>
+                    <ul class="list-inline">
+                        <li><a href="#">All Manufactures</a></li>
 
-    <!--<div class="row">
-        <div class="col-md-5"></div>
+                        <li><a href="#">All Shops</a></li>
+                    </ul>
+                </div>
 
-        <div class="col">
-            <div class="media">
-                <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
-                <div class="media-body">
-                    <h4>Media Middle</h4>
-                    <p>Lorem ipsum...</p>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Travel</strong>
+                    </h6>
+
+                    <ul class="list-inline">
+                        <li><a href="#">Hotel & Resorts</a></li>
+
+                        <li><a href="#">Deal comparison</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Restaurant</strong>
+                    </h6>
+
+                    <ul class="list-inline">
+                        <li><a href="#">Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Company</strong>
+                    </h6>
+
+                    <ul class="list-inline">
+                        <li><a href="#">About quality compare</a></li>
+
+                        <li><a href="#">Press</a></li>
+
+                        <li><a href="#">Jobs</a></li>
+
+                        <li><a href="#">Partners</a></li>
+
+                        <li><a href="#">Register a shop</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="col">
-            <div class="media">
-                <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
-                <div class="media-body">
-                    <h4>Media Middle</h4>
-                    <p>Lorem ipsum...</p>
-                </div>
-            </div>
+        <div class="text-center">
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-twitter fa-2x"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-google-plus fa-2x"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-linkedin fa-2x"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-dribbble fa-2x"> </i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>-->
 
-    <!--    Table   -->
-    <div class="tbl-margin">
-        <table class="table">
-            <caption class="mt-3">*As the basis of review(s) and features comparison the <a href="#">Apple Iphone X</a> is suggested
-                <a href="#">smartphone</a> to buy.
-            </caption>
-
-            <tbody class="text-center">
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">
-                    <div class="media px-5">
-                        <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
-                        <div class="media-body">
-                            <h5>Apple iphone x</h5>
-                            <p style="color: #6c757d">Starting from <a style="color: #005bd3"> $999 </a> </p>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="media px-5">
-                        <img src="assets/samsungs9.jpg" class="align-self-center mr-3" style="width:60px">
-                        <div class="media-body">
-                            <h4>Samsung galaxy S9</h4>
-                            <p style="color: #6c757d">Starting from <a style="color: #005bd3"> $799 </a> </p>
-                        </div>
-                    </div>
-                </th>
-            </tr>
-
-            <tr>
-                <th scope="row" class="alert-info text-dark"> <Reviews> PRODUCT REVIEW </Reviews></th>
-                <td class="alert-info">
-                    <fieldset class="rating">
-                        <input type="radio" id="star3" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input type="radio" id="star5" name="rating" value="3" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input type="radio" id="star6" name="rating" value="3" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input type="radio" id="star4half" name="rating" value="2 and a half" /><label class="half" for="star4half" title="Pretty good - 2.5 stars"></label>
-                    </fieldset>
-                </td>
-                <td class="alert-info">
-                    <fieldset class="rating">
-                        <input type="radio" id="star3.1" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input type="radio" id="star4.1" name="rating" value="4" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input type="radio" id="star5.1" name="rating" value="3" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input type="radio" id="star4half.1" name="rating" value="2 and a half" /><label class="half" for="star4half" title="Pretty good - 2.5 stars"></label>
-                    </fieldset>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">THICKNESS</th>
-                <td class="table-success">7 mm</td>
-                <td>7.8 mm</td>
-            </tr>
-            <tr>
-                <th scope="row">CPU SPEED</th>
-                <td >2100 MHz</td>
-                <td class="table-success">2800 MHz</td>
-            </tr>
-            <tr>
-                <th scope="row">SCREEN SIZE</th>
-                <td>5.1 in</td>
-                <td class="table-success">5.5 in</td>
-            </tr>
-            <tr>
-                <th scope="row">OS</th>
-                <td class="table-success">iOS 11.3</td>
-                <td>Android 7.0</td>
-            </tr>
-            <tr>
-                <th scope="row">SECONDARY CAMERA</th>
-                <td class="table-success">16 MP</td>
-                <td>12 MP</td>
-            </tr>
-            <tr>
-                <th scope="row">SIM</th>
-                <td >Single SIM</td>
-                <td class="table-success">Dual SIM</td>
-            </tr>
-            <tr>
-                <th scope="row">BATTERY</th>
-                <td>2600 mAH</td>
-                <td class="table-success">3200 mAH</td>
-            </tr>
-            <tr>
-                <th scope="row">WEIGHT</th>
-                <td class="table-success">174 gms</td>
-                <td >178 gms</td>
-            </tr>
-            <tr>
-                <th scope="row">SCREEN RESOLUTION</th>
-                <td >1125x2436</td>
-                <td class="table-success">1440x2960</td>
-            </tr>
-            <tr>
-                <th scope="row">RAM</th>
-                <td >3 GB</td>
-                <td class="table-success">4 GB</td>
-            </tr>
-            <tr>
-                <th scope="row" >PIXEL DENSITY</th>
-                <td class="table-success">531</td>
-                <td >463</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="mx-auto text-center">
-        <a role="button" href="redirectTo.html" class="btn btn-goto-shop my-5 font-weight-bold" aria-pressed="true">Go to shop</a>
-    </div>
-
-</div>
-
-<footer class="footer-bg pt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Shopping</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">All Manufactures</a></li>
-
-                    <li><a href="#">All Shops</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Travel</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">Hotel & Resorts</a></li>
-
-                    <li><a href="#">Deal comparison</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Restaurant</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">Restaurant</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Company</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">About quality compare</a></li>
-
-                    <li><a href="#">Press</a></li>
-
-                    <li><a href="#">Jobs</a></li>
-
-                    <li><a href="#">Partners</a></li>
-
-                    <li><a href="#">Register a shop</a></li>
-                </ul>
-            </div>
+        <div class="py-3 text-center">
+            © 2018 Copyright:
+            <a href="#"> gomax.com </a>
         </div>
-    </div>
-
-    <div class="text-center">
-        <ul class="list-unstyled list-inline">
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-facebook fa-2x"></i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-twitter fa-2x"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-google-plus fa-2x"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-linkedin fa-2x"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-dribbble fa-2x"> </i>
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="py-3 text-center">
-        © 2018 Copyright:
-        <a href="#"> gomax.com </a>
-    </div>
-</footer>
-</body>
-</html>
+    </footer>
+{% endblock %}

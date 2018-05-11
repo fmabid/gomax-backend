@@ -80,11 +80,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'GO_MAX_DB',
-        'USER': 'gomaxAdmin',
-        'PASSWORD': '12345',
+        'NAME': 'gm',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
-        'PORT': '',
+        'PORT': '3206',
         # 'OPTIONS': {
         #     'autocommit': True,
         # },
@@ -129,3 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

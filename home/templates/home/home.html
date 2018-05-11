@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="home-body">
             <div class="container slider-container">
-                <img class="img-fluid" src="assets/slide1.png">
+                <img class="img-fluid" src="{% static 'home/images/assets/slide1.png' %}">
 
                 <!--<div class="list-container">
                     <ul class="list-inline">
@@ -24,24 +24,31 @@
                 </div>-->
 
                 <div class="row ml-auto mr-auto list-container">
-                    <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="assets/refrigerator.svg" class="img-fluid"></div></a>
+                    {% for i in "x"|rjust:"6" %}
+                        <div class="col-md-2 col-sm-2 col-2">
+                            <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                        </div>
+                    {% endfor %}
+
+
+                    {% comment %}<div class="col-md-2 col-sm-2 col-2">
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="assets/refrigerator.svg" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="assets/refrigerator.svg" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="assets/refrigerator.svg" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="assets/refrigerator.svg" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="assets/refrigerator.svg" class="img-fluid"></div></a>
-                    </div>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                    </div>{% endcomment %}
                 </div>
             </div>
         </div>
@@ -52,77 +59,79 @@
             <h4 class="text-left mt-5 mb-5 text-capitalize">top Products</h4>
 
             <div class="row">
-                <div class="col-md-2 selecting-section my-1">
-                    <div class="float-right">
-                        <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="assets/30032523b.png"  alt="Card image cap"></a>
+                {% for product in products %}
+                    <div class="col-md-2 selecting-section my-1">
+                        <div class="float-right">
+                            <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="{{ product.p_image.url }}"  alt="Card image cap"></a>
 
-                        <div class="text-left ml-4">
-                            <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title font-weight-bold pt-1 mb-0">Apple Iphone X</h6>
-                            <small>Smartphone</small>
+                            <div class="text-left ml-4">
+                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp <strong class="text-primary card-price">{{ product.price }}</strong></p>
+                                <h6 class="card-title font-weight-bold pt-1 mb-0">{{ product.p_name }}</h6>
+                                <small>Phone</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-2 selecting-section my-1">
-                    <div class="float-right">
-                        <img class="card-img-top img-thumbnail border-5 py-3" src="assets/nintendo-switch.png"  alt="Card image cap">
+                    {% comment %}<div class="col-md-2 selecting-section my-1">
+                        <div class="float-right">
+                            <img class="card-img-top img-thumbnail border-5 py-3" src="assets/nintendo-switch.png"  alt="Card image cap">
 
-                        <div class="text-left ml-4">
-                            <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title font-weight-bold pt-1 mb-0">Nintendo Switch</h6>
-                            <small>Game Console</small>
+                            <div class="text-left ml-4">
+                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
+                                <h6 class="card-title font-weight-bold pt-1 mb-0">Nintendo Switch</h6>
+                                <small>Game Console</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-2 selecting-section my-1">
-                    <div class="float-right">
-                        <img class="card-img-top img-thumbnail border-5 py-3" src="assets/samsung-ue55mu9000.png"  alt="Card image cap">
+                    <div class="col-md-2 selecting-section my-1">
+                        <div class="float-right">
+                            <img class="card-img-top img-thumbnail border-5 py-3" src="assets/samsung-ue55mu9000.png"  alt="Card image cap">
 
-                        <div class="text-left ml-4">
-                            <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title font-weight-bold pt-1 mb-0">Samsung Curver UDH</h6>
-                            <small>TV</small>
+                            <div class="text-left ml-4">
+                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
+                                <h6 class="card-title font-weight-bold pt-1 mb-0">Samsung Curver UDH</h6>
+                                <small>TV</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-2 selecting-section my-1">
-                    <div class="float-right">
-                        <img class="card-img-top img-thumbnail border-5 py-3" src="assets/asus.png"  alt="Card image cap">
+                    <div class="col-md-2 selecting-section my-1">
+                        <div class="float-right">
+                            <img class="card-img-top img-thumbnail border-5 py-3" src="assets/asus.png"  alt="Card image cap">
 
-                        <div class="text-left ml-4">
-                            <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title font-weight-bold pt-1 mb-0">asus GL771</h6>
-                            <small>Laptop</small>
+                            <div class="text-left ml-4">
+                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
+                                <h6 class="card-title font-weight-bold pt-1 mb-0">asus GL771</h6>
+                                <small>Laptop</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-2 selecting-section my-1">
-                    <div class="float-right">
-                        <img class="card-img-top img-thumbnail border-5 py-3" src="assets/samsung-galaxy-s8-rose-pink.png"  alt="Card image cap">
+                    <div class="col-md-2 selecting-section my-1">
+                        <div class="float-right">
+                            <img class="card-img-top img-thumbnail border-5 py-3" src="assets/samsung-galaxy-s8-rose-pink.png"  alt="Card image cap">
 
-                        <div class="text-left ml-4">
-                            <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title font-weight-bold pt-1 mb-0 text-capitalize">Samsung s8</h6>
-                            <small>Smartphones</small>
+                            <div class="text-left ml-4">
+                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
+                                <h6 class="card-title font-weight-bold pt-1 mb-0 text-capitalize">Samsung s8</h6>
+                                <small>Smartphones</small>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-2 selecting-section my-1">
-                    <div class="float-right">
-                        <img class="card-img-top img-thumbnail border-5 py-3" src="assets/microsoft-xbox-one-s.png"  alt="Card image cap">
+                    <div class="col-md-2 selecting-section my-1">
+                        <div class="float-right">
+                            <img class="card-img-top img-thumbnail border-5 py-3" src="assets/microsoft-xbox-one-s.png"  alt="Card image cap">
 
-                        <div class="text-left ml-4">
-                            <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title font-weight-bold pt-1 mb-0 text-capitalize">Microsoft Xbox One</h6>
-                            <small>Game Console</small>
+                            <div class="text-left ml-4">
+                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
+                                <h6 class="card-title font-weight-bold pt-1 mb-0 text-capitalize">Microsoft Xbox One</h6>
+                                <small>Game Console</small>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </div>{% endcomment %}
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -187,7 +196,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="text-center mb-4 fa-5x text-success">
+                    <div class="text-center mb-4 fa-5x text-dark">
                         <i class="fas fa-star"></i>
                     </div>
                     <h4 class="text-capitalize">product comparison</h4>
@@ -200,7 +209,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="text-center mb-4 fa-5x text-success">
+                    <div class="text-center mb-4 fa-5x text-dark">
                         <i class="fas fa-tag"></i>
                     </div>
                     <h4 class="text-capitalize">About gomax</h4>
@@ -213,7 +222,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="text-center mb-4 fa-5x text-success">
+                    <div class="text-center mb-4 fa-5x text-dark">
                         <i class="fas fa-money-bill-alt"></i>
                     </div>
                     <h4 class="text-capitalize">best price</h4>
