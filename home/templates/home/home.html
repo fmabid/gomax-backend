@@ -26,7 +26,11 @@
                 <div class="row ml-auto mr-auto list-container">
                     {% for i in "x"|rjust:"6" %}
                         <div class="col-md-2 col-sm-2 col-2">
-                            <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                            <a href="#">
+                                <div class="listElement">
+                                    <img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
                     {% endfor %}
 
@@ -62,10 +66,12 @@
                 {% for product in products %}
                     <div class="col-md-2 selecting-section my-1">
                         <div class="float-right">
-                            <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="{{ product.p_image.url }}"  alt="Card image cap"></a>
+                            <a href="#">
+                                <img class="card-img-top img-thumbnail border-5 py-3" src="{{ product.p_image.url }}" alt="Card image cap">
+                            </a>
 
                             <div class="text-left ml-4">
-                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp <strong class="text-primary card-price">{{ product.price }}</strong></p>
+                                <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp <strong class="text-primary card-price">${{ product.price }}</strong></p>
                                 <h6 class="card-title font-weight-bold pt-1 mb-0">{{ product.p_name }}</h6>
                                 <small>Phone</small>
                             </div>
@@ -144,7 +150,7 @@
                 <div class="col-md-3 selecting-section my-1">
                     <div class="card float-right border-0">
                         <div class="discount-bg ml-auto">-15%</div>
-                        <img class="card-img-top px-1" src="assets/asus.png"  alt="Card image cap">
+                        <img class="card-img-top px-1" src="{% static 'home/images/assets/asus.png' %}"  alt="Card image cap">
                         <div class="text-left ml-4">
                             <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
                             <h6 class="card-title font-weight-bold pt-1 mb-0">asus GL771</h6>
@@ -156,7 +162,7 @@
                 <div class="col-md-3 selecting-section my-1">
                     <div class="card float-right border-0">
                         <div class="discount-bg ml-auto">-35%</div>
-                        <img class="card-img-top px-1" src="assets/iphonexdesign-800x669.png"  alt="Card image cap">
+                        <img class="card-img-top px-1" src="{% static 'home/images/assets/iphonexdesign-800x669.png' %}"  alt="Card image cap">
                         <div class="text-left ml-4">
                             <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
                             <h6 class="card-title font-weight-bold pt-1 mb-0">Apple Iphone X</h6>
@@ -168,7 +174,7 @@
                 <div class="col-md-3 selecting-section my-1">
                     <div class="card float-right border-0">
                         <div class="discount-bg ml-auto">-20%</div>
-                        <img class="card-img-top px-1" src="assets/intel-dc-s3520-240gb-2-5.png"  alt="Card image cap">
+                        <img class="card-img-top px-1" src="{% static 'home/images/assets/intel-dc-s3520-240gb-2-5.png' %}"  alt="Card image cap">
                         <div class="text-left ml-4">
                             <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
                             <h6 class="card-title font-weight-bold pt-1 mb-0">Intel DC s3520</h6>
@@ -180,7 +186,7 @@
                 <div class="col-md-3 selecting-section my-1">
                     <div class="card float-right border-0">
                         <div class="discount-bg ml-auto">-25%</div>
-                        <img class="card-img-top px-1" src="assets/samsung-ue55mu9000.png"  alt="Card image cap">
+                        <img class="card-img-top px-1" src="{% static 'home/images/assets/samsung-ue55mu9000.png' %}"  alt="Card image cap">
                         <div class="text-left ml-4">
                             <p class="card-preprice mt-3 txt-12 mb-0">Stating from &nbsp; <strong class="text-primary card-price">$999</strong></p>
                             <h6 class="card-title font-weight-bold pt-1 mb-0">Samsung Curver UDH</h6>
