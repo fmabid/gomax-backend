@@ -7,3 +7,4 @@ from .models import *
 # admin.site.register(TestUser)
 # admin.site.register(TestUserInfo)
 admin.site.register(ProductsTesting)
+admin.site.register(ReviewTesting)

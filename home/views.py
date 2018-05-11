@@ -64,8 +64,8 @@ class HomeView(generic.ListView):
     #     return context
 
 
-def product(request, product_id):
-    items = get_object_or_404(ProductsTesting, pk=product_id)
+def product(request, item_id):
+    items = get_object_or_404(ProductsTesting, pk=item_id)
     return render(request, 'home/product.html')
 
 
@@ -74,21 +74,66 @@ def product(request, product_id):
 #     template_name = 'home/product.html'
 
 
-def adding_product(request, product_id):
-    items = get_object_or_404(ProductsTesting, pk=product_id)
+def adding_product(request, item_id):
+    items = get_object_or_404(ProductsTesting, pk=item_id)
     return render(request, 'home/adding_product.html')
 
 
-def add_to_compare(request, product_id):
-    items = get_object_or_404(ProductsTesting, pk=product_id)
+def add_to_compare(request, item_id):
+    items = get_object_or_404(ProductsTesting, pk=item_id)
     return render(request, 'home/addtocompare.html')
 
 
-def comparison(request, product_id):
-    items = get_object_or_404(ProductsTesting, pk=product_id)
+def comparison(request, item_id):
+    items = get_object_or_404(ProductsTesting, pk=item_id)
     return render(request, 'home/comparison.html')
 
 
-def redirect_to(request, product_id):
-    items = get_object_or_404(ProductsTesting, pk=product_id)
+def redirect_to(request, item_id):
+    items = get_object_or_404(ProductsTesting, pk=item_id)
     return render(request, 'home/redirectTo.html')
+
+
+def any_product(request, item_id):
+    item = get_object_or_404(ProductsTesting, pk=item_id)
+    all_item = ProductsTesting.objects.all()
+
+    get_fk = ReviewTesting.objects.filter(p_id=item_id)
+
+    context = {
+        'item': item,
+        'all_item': all_item,
+        'reviews': get_fk,
+    }
+    return render(request, 'home/anyProduct.html', context)
+
+
+def add_review(request, item_id):
+    item = get_object_or_404(ProductsTesting, pk=item_id)
+    all_item = ProductsTesting.objects.all()
+
+    get_fk = ReviewTesting.objects.filter(p_id=item_id)
+
+    context = {
+        'item': item,
+        'all_item': all_item,
+        'reviews': get_fk,
+        'error_message': "Not valid product.",
+    }
+
+
+    # try:
+    #     selected_item = get_object_or_404(ReviewTesting, p_id=request.POST['item_id'])
+    # except(KeyError, ProductsTesting.DoesNotExist):
+    #     return render(request, 'home/anyProduct.html', context)
+    # else:
+    #     selected_item.p_id_id = request.POST['item_id']
+    #     selected_item.email = request.POST['email_address']
+    #     selected_item.comments = request.POST['review_comment']
+    #     selected_item.save()
+
+    if request.method == 'POST':
+        q = ReviewTesting(p_id_id=item_id, email=request.POST['email_address'], comments=request.POST['review_comment'])
+        q.save()
+
+    return render(request, 'home/anyProduct.html', context)

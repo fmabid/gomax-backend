@@ -71,6 +71,7 @@ import _mysql
 #         return self.p_id
 
 
+
 class ProductsTesting(models.Model):
     p_name = models.CharField(max_length=50)
     technology = models.CharField(max_length=50)
@@ -95,6 +96,7 @@ class ProductsTesting(models.Model):
     colors = models.CharField(max_length=50)
     price = models.IntegerField()
     p_image = models.FileField()
+    shop_link = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return self.p_name
@@ -121,7 +123,7 @@ class ProductSiteTesting(models.Model):
 class ReviewTesting(models.Model):
     p_id = models.ForeignKey(ProductsTesting, on_delete=models.CASCADE)
     comments = models.TextField()
-    rating = models.FloatField()
+    email = models.EmailField()
 
     def __str__(self):
-        return self.p_id
+        return self.email

@@ -1,655 +1,335 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Apple iphone x</title>
+{% extends 'home/base.html' %}
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/customnavbar.css"/>
+{% block extra_css %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'home/css/anyProduct.css' %}"/>
+{% endblock %}
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/customNav.js"></script>
-</head>
-<body>
-<div class="navbar pb-0" id="logo">
-    <a class="navbar-brand text-center ml-auto mr-auto" href="#">
-        <img class="" src="assets/Logo.png" width="70" alt="">
-    </a>
-</div>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light px-5 py-0 bg-transparent">
-    <ul class="navbar-nav ml-auto mr-auto txt-nav-menu" id="myMenu">
-        <li class="nav-item mx-4 ">
-            <a class="nav-link" href="#">Shopping</a>
-        </li>
-        <li class="nav-item mx-4">
-            <a class="nav-link" href="#">Traveling</a>
-        </li>
-        <li class="nav-item mx-4">
-            <a class="nav-link" href="#">Restaurant</a>
-        </li>
-    </ul>
-</nav>
-
-<div class="navbar nav-bg">
-    <div class="mx-5">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        </form>
-    </div>
-
-    <div class="favorite mr-5">
-        <i class="fas fa-heart mr-1 text-white"></i>
-        <a class="" href="#"><span class="text-white">My Favorites</span></a>
-    </div>
-</div>
 
 
 <!--- Any Product layout--->
 
+{% block body %}
+    <div class="container my-5">
+        <h4 class="mb-4">Smartphones</h4>
+        <div class="row">
 
-<div class="container mt-5">
-    <h4 class="mb-4">smartphones/appleiphonex</h4>
+            <div class="col">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="col-sm-auto">
+                            <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="{{ item.p_image.url }}"  alt="Card image cap"></a>
+                        </div>
+                        <div class="col-sm-auto">
+                            <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="{{ item.p_image.url }}"  alt="Card image cap"></a>
+                        </div>
+                        <div class="col-sm-auto">
+                            <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="{{ item.p_image.url }}"  alt="Card image cap"></a>
+                        </div>
+
+                    </div>
+                    <div class="col-8">
+                        <div class="float-right">
+                            <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="{{ item.p_image.url }}"  alt="Card image cap"></a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="text-left ml-6">
+                    <p ><h5>{{ item.p_name }} <small class="text-muted">{{ item.internal_memory }} {{ item.colors }}</small></h5> </p>
+                    <button type="button" class="btn btn-outline-secondary"><span class="badge badge-secondary">4</span>  more varient, e.g. 264 GB grey</button>
+                    <p class="card-preprice mt-3 txt-12 mb-0">Offer stating from &nbsp; <strong class="text-primary card-price">$999-$1050</strong></p>
+                    <small class="text-muted">10 user reviews: <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+
+                    </small>
+                    <p><strong class="text-primary card-features">4G Smartphone </strong> <small class="text-muted"> 5,8 Inch . Full HD . 3 GB RAM . 64 GB . iOS 11 . 12 Megapixel . 2700 mAh</small>
+                    </p>
+
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="col-md-6">
+                    <div class="float-md-center">
+                        <div class="text-center ml-2">
+                            <p>
+                                <button type="button" class="btn btn-outline-success"><i class="far fa-plus-square"></i>   ADD TO COMPARE</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-md-center">
+                        <div class="text-center ml-2">
+                            <p>
+                                <button type="button" class="btn btn-outline-success"><i class="far fa-bell"></i>    GET PRICE ALERT</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="float-md-center">
+                        <div class="text-center ml-2">
+                            <p>
+                                <small class="text-muted"> We will notify you when your target price has been reached. </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!---Price list and Topm products-->
+
     <div class="row">
 
-        <div class="col">
-            <div class="row">
-                <div class="col-4">
-                    <div class="col-sm-auto">
-                        <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://png.pngtree.com/element_origin_min_pic/17/09/15/3bac7568f6aa82a80217c9878038143c.jpg"  alt="Card image cap"></a>
-                    </div>
-                    <div class="col-sm-auto">
-                        <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://png.pngtree.com/element_origin_min_pic/17/09/15/3bac7568f6aa82a80217c9878038143c.jpg"  alt="Card image cap"></a>
-                    </div>
-                    <div class="col-sm-auto">
-                        <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://png.pngtree.com/element_origin_min_pic/17/09/15/3bac7568f6aa82a80217c9878038143c.jpg"  alt="Card image cap"></a>
-                    </div>
-
+        <div class="col-4">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h4>Top 10 Products</h4>
+                    <h6 class="text-primary">Smartphones </h6>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            1. Samsung Galaxy S8
+                            <span class="badge badge-primary badge-pill">18</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            2. Samsung Galaxy A5
+                            <span class="badge badge-primary badge-pill">10</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            3. Samsung Galaxy S7
+                            <span class="badge badge-primary badge-pill">29</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            4. Samsung Galaxy S7
+                            <span class="badge badge-primary badge-pill">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            5. Samsung Galaxy Note 8
+                            <span class="badge badge-primary badge-pill">27</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            6. Apple iPhone SE
+                            <span class="badge badge-primary badge-pill">11</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            7. Apple iPhone 7
+                            <span class="badge badge-primary badge-pill">19</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            8. Samsung Galaxy S7 Edge
+                            <span class="badge badge-primary badge-pill">9</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            9. Honor 9
+                            <span class="badge badge-primary badge-pill">13</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            10. Apple iPhone 6
+                            <span class="badge badge-primary badge-pill">7</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-8">
-                    <div class="float-right">
-                        <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://png.pngtree.com/element_origin_min_pic/17/09/15/3bac7568f6aa82a80217c9878038143c.jpg"  alt="Card image cap"></a>
-
-                    </div>
-                </div>
-
             </div>
+
         </div>
-        <div class="col-5">
-            <div class="text-left ml-6">
-                <p ><h5>Apple iphone X <small class="text-muted">64 GB Silver</small></h5> </p>
-                <button type="button" class="btn btn-outline-secondary"><span class="badge badge-secondary">4</span>  more varient, e.g. 264 GB grey</button>
-                <p class="card-preprice mt-3 txt-12 mb-0">Offer stating from &nbsp; <strong class="text-primary card-price">$999-$1050</strong></p>
-                <small class="text-muted">10 user reviews: <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
 
-                </small>
-                <p><strong class="text-primary card-features">4G Smartphone </strong> <small class="text-muted"> 5,8 Inch . Full HD . 3 GB RAM . 64 GB . iOS 11 . 12 Megapixel . 2700 mAh</small>
-                </p>
-
-
-            </div>
-        </div>
-        <div class="col">
-            <div class="col-md-6">
-                <div class="float-md-center">
-                    <div class="text-center ml-2">
-                        <p>
-                            <button type="button" class="btn btn-outline-success"><i class="far fa-plus-square"></i>   ADD TO COMPARE</button>
-                        </p>
+        <div class="col-8">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm">
+                        <h5>Price comparison</h5>
+                    </div>
+                    <div class="col-sm">
+                        <p><i class="fas fa-toggle-on"></i> Show old products</p>
+                    </div>
+                    <div class="col-sm">
+                        <h6>Start from $999</h6>
                     </div>
                 </div>
-                <div class="float-md-center">
-                    <div class="text-center ml-2">
-                        <p>
-                            <button type="button" class="btn btn-outline-success"><i class="far fa-bell"></i>    GET PRICE ALERT</button>
-                        </p>
+
+
+                {% for the_item in all_item %}
+                    <div class="row">
+                        <div class="col-sm">
+                            <h6>{{ the_item.p_name }}</h6>
+                        </div>
+                        <div class="col-sm">
+                            <h4>$ {{ the_item.price }}</h4>
+                            <h6>${{ the_item.price }} incl. delivery</h6>
+                        </div>
+                        <div class="col-sm">
+                            <p>
+                                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
+                                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
+                            </p>
+                        </div>
+                        <div class="col-sm">
+                            <p>
+                                <small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small>
+                            </p>
+                        </div>
+                        <div class="col-sm mb-3">
+                            <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
+                            <p>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half"></i>
+                                <i class="far fa-star"></i>
+                            <p>
+                            <h6> 70 reviews</h6>
+
+                        </div>
+                        <div class="col-sm">
+                            <a href="{% url 'home:redirect_to' the_item.id %}">
+                                <button type="button" class="btn btn-success">Go to shop</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="float-md-center">
-                    <div class="text-center ml-2">
-                        <p>
-                            <small class="text-muted"> We will notify you when your target price has been reached. </small>
-                        </p>
-                    </div>
+                {% endfor %}
+
+                <div class="container-fluid text-center mt-5">
+                    <button type="button" class="btn btn-outline-primary ml-auto mr-auto">Load more</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<br>
 
-<!---Price list and Topm products-->
 
-<div class="row">
+    <!---Any Product layout END--->
+    <hr>
+    <!---User Reviews--->
 
-    <div class="col-4">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h6>Top 10 Products</h6>
-                <h9>Smartphones </h9>
-                <p class="lead">
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        1. Samsung Galaxy S8
-                        <span class="badge badge-primary badge-pill">18</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        2. Samsung Galaxy A5
-                        <span class="badge badge-primary badge-pill">10</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        3. Samsung Galaxy S7
-                        <span class="badge badge-primary badge-pill">29</span>
-                    </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    4. Samsung Galaxy S7
-                    <span class="badge badge-primary badge-pill">14</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    5. Samsung Galaxy Note 8
-                    <span class="badge badge-primary badge-pill">27</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    6. Apple iPhone SE
-                    <span class="badge badge-primary badge-pill">11</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    7. Apple iPhone 7
-                    <span class="badge badge-primary badge-pill">19</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    8. Samsung Galaxy S7 Edge
-                    <span class="badge badge-primary badge-pill">9</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    9. Honor 9
-                    <span class="badge badge-primary badge-pill">13</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    10. Apple iPhone 6
-                    <span class="badge badge-primary badge-pill">7</span>
-                </li>
-                </ul>
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col-8">
     <div class="container">
         <div class="row">
-            <div class="col-sm">
-                <p><h5>Price comparison</h5>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h9><i class="fas fa-toggle-on"></i>  Show old products</h9>
-            </div>
-            <div class="col-sm">
-                <p> <h8>Start from $999</h8>
-                </p>
-            </div>
-        </div>
+            <div class="col-12 col-md-4">
+                <div class="container-fluid-left">
+                    <h5>User Reviews</h5>
+                    <h6>Average from {{ reviews.count }} reviews</h6>
+                    <div>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
 
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$1090</h4>
-                <p><h7>$1090 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                <p>
-                    <h9> 70 reviews</h9>
-                </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$1010</h4>
-                <p><h7>$1010 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                <p>
-                    <h9> 70 reviews</h9>
-                </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$1030</h4>
-                <p><h7>$1030 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                <p>
-                    <h9> 70 reviews</h9>
-                </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$990</h4>
-                <p><h7>$990 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                    <p>
-                    <h9> 70 reviews</h9>
-                    </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$1090</h4>
-                <p><h7>$1090 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                <p>
-                    <h9> 70 reviews</h9>
-                </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$1090</h4>
-                <p><h7>$1090 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                <p>
-                    <h9> 70 reviews</h9>
-                </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$1090</h4>
-                <p><h7>$1090 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                <p>
-                    <h9> 70 reviews</h9>
-                </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <p><h7>Apple iPhone X 64GB/256GB LTE Unlocked Sim free - Space Grey/ Sil­ver </h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <h4>$1090</h4>
-                <p><h7>$1090 incl. delivery</h7></p>
-            </div>
-            <div class="col-sm">
-                <p>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="http://www.i2clipart.com/cliparts/9/6/1/0/clipart-american-express-256x256-9610.png"  style="width: 40px" alt="Card image cap"></a>
-                    <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"  style="width: 40px" alt="Card image cap"></a>
-                </p>
-            </div>
-            <div class="col-sm">
-                <p><h7><small class="text-muted">Will usu­ally dis­patch within 4 work­ing days of re­ceiv­ing cleared pay­ment </small></h7>
-                </p>
-            </div>
-            <div class="col-sm">
-                <a href="#"><img class="card-img-top img-thumbnail border-5 py-3" src="https://adangra5.files.wordpress.com/2014/07/daraz-colour-change-logo.png"  style="width: 70px" alt="Card image cap"></a>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half"></i>
-                    <i class="far fa-star"></i>
-                <p>
-                    <h9> 70 reviews</h9>
-                </p>
-                </p>
-
-            </div>
-            <div class="col-sm">
-                <p><button type="button" class="btn btn-success">Go to shop</button>
-                </p>
-            </div>
-
-        </div>
-
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col">
-
-                </div>
-                <div class="col-6">
-                    <button type="button" class="btn btn-outline-primary">Load more</button>
-                </div>
-                <div class="col">
-
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    </div>
-</div>
-
-
-
-
-<!---Any Product layout END--->
-<hr>
-<!---User Reviews--->
-
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-4">
-            <div class="container-fluid-left">
-                <h5>User Reviews</h5>
-                <p>
-                    <h7>Average from 10 reviews</h7>
-                </p>
-                <p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </p>
-                <p>
                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#review">Write a product review</button>
-                </p>
-                <div class="container">
-                    <div id="review" class="modal fade" role="dialog">
+
+                    <div class="container">
+                        <div id="review" class="modal fade" role="dialog">
 
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="container">
-                                        <h7>Your product review</h7>
-                                        <h4>Apple iphone X </h4>
+                                        <p class="mt-1">Your product review</p>
+                                        <h2>{{ item.p_name }}</h2>
                                         <small> Rating: <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star-half"></i>
-                                            <i class="far fa-star"></i> </small>
+                                            <i class="far fa-star"></i>
+                                        </small>
                                     </div>
+
                                     <div class="modal-body">
-                                        <p>
-                                            <input type="titlesReview" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title">
+                                        {% if error_message %}
+                                            <h2>{{ error_message }}</h2>
+                                        {% endif %}
+                                        <form action="{% url 'home:add_review' item.id %}" method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="item_id" value="{{ item.id }}">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email_address" value="" required>
                                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                        </p>
-                                        <p><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="write review"></textarea>
+
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="write review" name="review_comment" required></textarea>
                                             <small id="reviews" class="form-text text-muted">Write your review on this product.</small>
-                                        </p>
 
-                                        <div class="container">
+                                            <small><strong class="text-primary card-price"> Privacy Policy Terms & Conditions </strong></small>
 
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter name">
-                                                </div>
-                                                <div class="col-8">
-                                                    <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <small><strong class="text-primary card-price"> Privacy Policy Terms & Conditions </strong></small>
-
-
+                                            <button type="submit" class="btn btn-primary">Submit review</button>
+                                        </form>
                                     </div>
+
                                     <div class="modal-footer">
                                         <div class="container-md-left">
-                                        <button type="submit" class="btn btn-primary">Submit review</button>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="col-6 col-md-6">
+                <div class="container-fluid-left">
+                    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                        <table class="table table-bordered">
+
+                            <thead>
+                            <tr>
+                                <th scope="col">Status</th>
+                                <th scope="col">Comments</th>
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% if reviews %}
+                                {% for review in reviews %}
+                                    <tr>
+                                        <th scope="row"><i class="far fa-smile"></i></th>
+                                        <td>{{ review.comments }}
+                                            <small class="d-block text-primary">By- {{ review.email }}</small>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% else %}
+                                <div class="text-danger">NO review found.</div>
+                            {% endif %}
+
+
+
+                            {% comment %}<tr>
+                                <th scope="row"><i class="far fa-frown"></i></th>
+                                <td>so people who write the reviews please be sure before writing something. just saw the review it is definitely a fantastic phablet but too much price for my pocket.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><i class="far fa-smile"></i></th>
+                                <td colspan="2">finally a phone that's really worth buying, i m talking in terms of features. now doubt even i paid premium of 58k to buy this but it really feels amazing.</td>
+                            </tr>{% endcomment %}
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
             </div>
         </div>
-        <div class="col-6 col-md-6">
-
-            <div class="container-fluid-left">
-                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
-                <table class="table table-bordered">
-
-                    <thead>
-                    <tr>
-                        <th scope="col">Status</th>
-                        <th scope="col">Comments</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row"><i class="far fa-smile"></i></th>
-                        <td>finally a phone that's really worth buying, i m talking in terms of features. now doubt even i paid premium of 58k to buy this but it really feels amazing.</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row"><i class="far fa-frown"></i></th>
-                        <td>so people who write the reviews please be sure before writing something. just saw the review it is definitely a fantastic phablet but too much price for my pocket.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><i class="far fa-smile"></i></th>
-                        <td colspan="2">finally a phone that's really worth buying, i m talking in terms of features. now doubt even i paid premium of 58k to buy this but it really feels amazing.</td>
-                    </tr>
-
-                    </tbody>
-                </table>
-                </div>
-            </div>
-
-        </div>
     </div>
-</div>
 
 
-<hr>
+    <hr>
 
 
 
-<!---User Reviews END--->
+    <!---User Reviews END--->
 
     <footer class="footer-bg pt-5">
         <div class="container">
@@ -743,4 +423,6 @@
             <a href="#"> gomax.com </a>
         </div>
     </footer>
-</body>
+{% endblock %}
+
+
