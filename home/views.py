@@ -57,12 +57,6 @@ class HomeView(generic.ListView):
     def get_queryset(self):
         return ProductsTesting.objects.all()
 
-    # def get_context_data(self, *, object_list=None, **kwargs):
-    #     context = {
-    #         'range': range(6),
-    #     }
-    #     return context
-
 
 def product(request, item_id):
     items = get_object_or_404(ProductsTesting, pk=item_id)
@@ -120,17 +114,6 @@ def add_review(request, item_id):
         'reviews': get_fk,
         'error_message': "Not valid product.",
     }
-
-
-    # try:
-    #     selected_item = get_object_or_404(ReviewTesting, p_id=request.POST['item_id'])
-    # except(KeyError, ProductsTesting.DoesNotExist):
-    #     return render(request, 'home/anyProduct.html', context)
-    # else:
-    #     selected_item.p_id_id = request.POST['item_id']
-    #     selected_item.email = request.POST['email_address']
-    #     selected_item.comments = request.POST['review_comment']
-    #     selected_item.save()
 
     if request.method == 'POST':
         q = ReviewTesting(p_id_id=item_id, email=request.POST['email_address'], comments=request.POST['review_comment'])
