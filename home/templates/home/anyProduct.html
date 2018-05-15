@@ -60,16 +60,16 @@
             <div class="col">
                 <div class="col-md-6">
                     <div class="float-md-center">
-                        <div class="text-center ml-2">
-                            <p>
-                                <button type="button" class="btn btn-outline-success"><i class="far fa-plus-square"></i>   ADD TO COMPARE</button>
-                            </p>
+                        <div class="text-center ml-2 mb-3">
+                            <a href="{% url 'home:add_to_compare' item.id %}">
+                                <button type="submit" class="btn btn-outline-success"><i class="far fa-plus-square"></i> ADD TO COMPARE</button>
+                            </a>
                         </div>
                     </div>
                     <div class="float-md-center">
                         <div class="text-center ml-2">
                             <p>
-                                <button type="button" class="btn btn-outline-success"><i class="far fa-bell"></i>    GET PRICE ALERT</button>
+                                <button type="button" class="btn btn-outline-success"><i class="far fa-bell"></i> GET PRICE ALERT</button>
                             </p>
                         </div>
                     </div>
@@ -190,7 +190,7 @@
 
                         </div>
                         <div class="col-sm">
-                            <a href="{% url 'home:redirect_to' the_item.id %}">
+                            <a href="{{ the_item.shop_link }}">
                                 <button type="button" class="btn btn-success">Go to shop</button>
                             </a>
                         </div>

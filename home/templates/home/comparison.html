@@ -11,61 +11,49 @@
     <div class="container-fluid pt-5">
         <h4 class="text-capitalize ml-5">product comparison</h4>
 
-        <!--<div class="row">
-            <div class="col-md-5"></div>
-
-            <div class="col">
-                <div class="media">
-                    <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
-                    <div class="media-body">
-                        <h4>Media Middle</h4>
-                        <p>Lorem ipsum...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="media">
-                    <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
-                    <div class="media-body">
-                        <h4>Media Middle</h4>
-                        <p>Lorem ipsum...</p>
-                    </div>
-                </div>
-            </div>
-        </div>-->
 
         <!--    Table   -->
         <div class="tbl-margin">
             <table class="table">
-                <caption class="mt-3">*As the basis of review(s) and features comparison the <a href="#">Apple Iphone X</a> is suggested
-                    <a href="#">smartphone</a> to buy.
-                </caption>
+                {% comment %}<caption class="mt-3">*As the basis of review(s) and features comparison the <a href="{% url 'home:redirect_to' previtem.id %}">{{ previtem.p_name }}</a> is suggested
+                    <a href="{% url 'home:home' %}">smartphone</a> to buy.
+                </caption>{% endcomment %}
+
+                {% if flag %}
+                    <caption class="mt-3">*As the basis of review(s) and features comparison the <a href="{% url 'home:redirect_to' item.id %}">{{ item.p_name }}</a> is suggested
+                        <a href="{% url 'home:home' %}">smartphone</a> to buy.
+                    </caption>
+                {% else %}
+                    <caption class="mt-3">*As the basis of review(s) and features comparison the <a href="{% url 'home:redirect_to' previtem.id %}">{{ previtem.p_name }}</a> is suggested
+                        <a href="{% url 'home:home' %}">smartphone</a> to buy.
+                    </caption>
+                {% endif %}
+
 
                 <tbody class="text-center">
                 <tr>
                     <th scope="col"></th>
                     <th scope="col">
                         <div class="media px-5">
-                            <img src="assets/iphonexdesign-800x669.png" class="align-self-center mr-3" style="width:60px">
+                            <img src="{{ previtem.p_image.url }}" class="align-self-center mr-3" style="width:60px">
                             <div class="media-body">
-                                <h5>Apple iphone x</h5>
-                                <p style="color: #6c757d">Starting from <a style="color: #005bd3"> $999 </a> </p>
+                                <h5>{{ previtem.p_name }}</h5>
+                                <p style="color: #6c757d">Starting from <a style="color: #005bd3"> ${{ previtem.price }} </a> </p>
                             </div>
                         </div>
                     </th>
                     <th scope="col">
                         <div class="media px-5">
-                            <img src="assets/samsungs9.jpg" class="align-self-center mr-3" style="width:60px">
+                            <img src="{{ item.p_image.url }}" class="align-self-center mr-3" style="width:60px">
                             <div class="media-body">
-                                <h4>Samsung galaxy S9</h4>
-                                <p style="color: #6c757d">Starting from <a style="color: #005bd3"> $799 </a> </p>
+                                <h4>{{ item.p_name }}</h4>
+                                <p style="color: #6c757d">Starting from <a style="color: #005bd3"> ${{ item.price }} </a> </p>
                             </div>
                         </div>
                     </th>
                 </tr>
 
-                <tr>
+                {% comment %}<tr>
                     <th scope="row" class="alert-info text-dark"> <Reviews> PRODUCT REVIEW </Reviews></th>
                     <td class="alert-info">
                         <fieldset class="rating">
@@ -84,69 +72,76 @@
                             <input type="radio" id="star4half.1" name="rating" value="2 and a half" /><label class="half" for="star4half" title="Pretty good - 2.5 stars"></label>
                         </fieldset>
                     </td>
+                </tr>{% endcomment %}
+
+                <tr>
+                    <th scope="row">Disp Resolution</th>
+                    <td class="table-secondary">{{ previtem.disp_resolution }}</td>
+                    <td class="table-active">{{ item.disp_resolution }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">THICKNESS</th>
-                    <td class="table-success">7 mm</td>
-                    <td>7.8 mm</td>
+                    <th scope="row">Dimensions</th>
+                    <td class="table-secondary">{{ previtem.dimensions }}</td>
+                    <td class="table-active">{{ item.dimensions }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">CPU SPEED</th>
-                    <td >2100 MHz</td>
-                    <td class="table-success">2800 MHz</td>
+                    <th scope="row">CPU</th>
+                    <td class="table-secondary">{{ previtem.cpu }}</td>
+                    <td class="table-active">{{ item.cpu }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">SCREEN SIZE</th>
-                    <td>5.1 in</td>
-                    <td class="table-success">5.5 in</td>
+                    <th scope="row" >GPU</th>
+                    <td class="table-secondary">{{ previtem.gpu }}</td>
+                    <td class="table-active">{{ item.gpu }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">OS</th>
-                    <td class="table-success">iOS 11.3</td>
-                    <td>Android 7.0</td>
+                    <th scope="row">Display Type</th>
+                    <td class="table-secondary">{{ previtem.disp_type }}</td>
+                    <td class="table-active">{{ item.disp_type }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">SECONDARY CAMERA</th>
-                    <td class="table-success">16 MP</td>
-                    <td>12 MP</td>
+                    <th scope="row">Display Size</th>
+                    <td class="table-secondary">{{ previtem.disp_size }}</td>
+                    <td class="table-active">{{ item.disp_size }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">SIM</th>
-                    <td >Single SIM</td>
-                    <td class="table-success">Dual SIM</td>
+                    <th scope="row">Os</th>
+                    <td class="table-secondary">{{ previtem.os }}</td>
+                    <td class="table-active">{{ item.os }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">BATTERY</th>
-                    <td>2600 mAH</td>
-                    <td class="table-success">3200 mAH</td>
+                    <th scope="row">Chipset</th>
+                    <td class="table-secondary">{{ previtem.chipset }}</td>
+                    <td class="table-active">{{ item.chipset }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">WEIGHT</th>
-                    <td class="table-success">174 gms</td>
-                    <td >178 gms</td>
+                    <th scope="row">Sim</th>
+                    <td class="table-secondary">{{ previtem.sim }}</td>
+                    <td class="table-active">{{ item.sim }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">SCREEN RESOLUTION</th>
-                    <td >1125x2436</td>
-                    <td class="table-success">1440x2960</td>
+                    <th scope="row">Battery</th>
+                    <td class="table-secondary">{{ previtem.battery }}</td>
+                    <td class="table-active">{{ item.battery }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">RAM</th>
-                    <td >3 GB</td>
-                    <td class="table-success">4 GB</td>
+                    <th scope="row">Weight</th>
+                    <td class="table-secondary">{{ previtem.weight }}</td>
+                    <td class="table-active">{{ item.weight }}</td>
                 </tr>
                 <tr>
-                    <th scope="row" >PIXEL DENSITY</th>
-                    <td class="table-success">531</td>
-                    <td >463</td>
+                    <th scope="row">Internal Memory</th>
+                    <td class="table-secondary">{{ previtem.internal_memory }}</td>
+                    <td class="table-active">{{ item.internal_memory }}</td>
                 </tr>
+
                 </tbody>
             </table>
         </div>
 
-        <div class="mx-auto text-center">
+        {% comment %}<div class="mx-auto text-center">
             <a role="button" href="redirectTo.html" class="btn btn-goto-shop my-5 font-weight-bold" aria-pressed="true">Go to shop</a>
-        </div>
+        </div>{% endcomment %}
 
     </div>
 

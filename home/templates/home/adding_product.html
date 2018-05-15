@@ -9,199 +9,159 @@
 
 
 {% block body %}
-<div class="container-fluid main-body mt-5 mb-5">
-    <div class="container ">
-        <p class="text-left">Comparing product</p>
+    <div class="container-fluid main-body mt-5 mb-5">
+        <div class="container ">
+            <p class="text-left">Comparing product</p>
 
-        <div class="row">
-            <div class="col-md-5 selecting-section">
-                <div class="card float-right border-0" style="width: 15rem;">
-                    <img class="card-img-top" src="assets/iphonexdesign-800x669.png"  alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Apple Iphone X</h5>
+            <div class="row">
+                <div class="col-md-5 selecting-section">
+                    <div class="card float-right border-0" style="width: 15rem;">
+                        <img class="card-img-top" src="{{ previtem.p_image.url }}"  alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ previtem.p_name }}</h5>
 
-                        <p class="card-text mb-0">64GB Silver</p>
-                        <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-2"></div>
-
-            <div class="col-md-5 selecting-section">
-                <div class="card float-left border-0" style="width: 15rem;">
-                    <img class="card-img-top" src="assets/14898.750.png"  alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Samsung S8</h5>
-
-                        <p class="card-text mb-0">64GB </p>
-                        <p class="card-preprice">Stating from <strong class="text-primary card-price">$599</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center ml-auto mr-auto">
-                <a href="" class="btn copm-btn-color w-100">Compare</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid suggestion mt-5 mb-5 border-top">
-    <div class="container ">
-        <h4 class="text-left mb-5 mt-5">Product suggestion</h4>
-
-        <div class="row">
-            <div class="col-md-3 selecting-section">
-                <div class="card float-right border-0" style="width: 15rem;">
-                    <img class="card-img-top" src="assets/iphonexdesign-800x669.png"  alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                        <h6 class="card-title text-left">Apple Iphone X</h6>
-                        <p class="card-text">64GB Silver</p>
-                        <div class="text-center">
-                            <a href="" class="btn copm-btn-color w-100">Compare</a>
+                            <p class="card-text mb-0">{{ previtem.internal_memory }}</p>
+                            <p class="card-preprice">Stating from <strong class="text-primary card-price">${{ previtem.price }}</strong></p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 selecting-section">
-                <div class="card float-right border-0" style="width: 15rem;">
-                    <img class="card-img-top" src="assets/14095.png"  alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                        <h6 class="card-title text-left">Apple Iphone X</h6>
-                        <p class="card-text">64GB Silver</p>
-                        <div class="text-center">
-                            <a href="" class="btn copm-btn-color w-100">Compare</a>
+                <div class="col-md-2"></div>
+
+                <div class="col-md-5 selecting-section">
+                    <div class="card float-left border-0" style="width: 15rem;">
+                        <img class="card-img-top" src="{{ item.p_image.url }}"  alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ item.p_name }}</h5>
+
+                            <p class="card-text mb-0">{{ item.internal_memory }}</p>
+                            <p class="card-preprice">Stating from <strong class="text-primary card-price">${{ item.price }}</strong></p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 selecting-section">
-                <div class="card float-right border-0" style="width: 15rem;">
-                    <img class="card-img-top" src="assets/14898.750.png"  alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                        <h6 class="card-title text-left">Apple Iphone X</h6>
-                        <p class="card-text">64GB Silver</p>
-                        <div class="text-center">
-                            <a href="" class="btn copm-btn-color w-100">Compare</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 selecting-section">
-                <div class="card float-right border-0" style="width: 15rem;">
-                    <img class="card-img-top" src="assets/30032523b.png"  alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                        <h6 class="card-title text-left">Apple Iphone X</h6>
-                        <p class="card-text">64GB Silver</p>
-                        <div class="text-center">
-                            <a href="" class="btn copm-btn-color w-100">Compare</a>
-                        </div>
-                    </div>
+                <div class="text-center ml-auto mr-auto">
+                    <a href="{% url 'home:comparison' previtem.id item.id %}" class="btn copm-btn-color w-100">Compare</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="container-fluid suggestion mt-5 mb-5 border-top">
+        <div class="container ">
+            <h4 class="text-left mb-5 mt-5">Product suggestion</h4>
 
-<footer class="footer-bg pt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Shopping</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">All Manufactures</a></li>
-
-                    <li><a href="#">All Shops</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Travel</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">Hotel & Resorts</a></li>
-
-                    <li><a href="#">Deal comparison</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Restaurant</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">Restaurant</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Company</strong>
-                </h6>
-
-                <ul class="list-inline">
-                    <li><a href="#">About quality compare</a></li>
-
-                    <li><a href="#">Press</a></li>
-
-                    <li><a href="#">Jobs</a></li>
-
-                    <li><a href="#">Partners</a></li>
-
-                    <li><a href="#">Register a shop</a></li>
-                </ul>
+            <div class="row">
+                {% for thisitem in all_item %}
+                    <div class="col-md-3 selecting-section">
+                        <div class="card float-right border-0" style="width: 15rem;">
+                            <img class="card-img-top" src="{{ thisitem.p_image.url }}"  alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-preprice">Stating from <strong class="text-primary card-price">${{ thisitem.pri4 }}</strong></p>
+                                <h6 class="card-title text-left">{{ thisitem.p_name }}</h6>
+                                <p class="card-text">{{ thisitem.internal_memory }}</p>
+                                <div class="text-center">
+                                    <a href="#" class="btn copm-btn-color w-100">Compare</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 
-    <div class="text-center">
-        <ul class="list-unstyled list-inline">
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-facebook fa-2x"></i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-twitter fa-2x"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-google-plus fa-2x"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-linkedin fa-2x"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a href="#" class=" mx-1">
-                    <i class="fab fa-dribbble fa-2x"> </i>
-                </a>
-            </li>
-        </ul>
-    </div>
 
-    <div class="py-3 text-center">
-        © 2018 Copyright:
-        <a href="#"> gomax.com </a>
-    </div>
-</footer>
+    <footer class="footer-bg pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Shopping</strong>
+                    </h6>
+
+                    <ul class="list-inline">
+                        <li><a href="#">All Manufactures</a></li>
+
+                        <li><a href="#">All Shops</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Travel</strong>
+                    </h6>
+
+                    <ul class="list-inline">
+                        <li><a href="#">Hotel & Resorts</a></li>
+
+                        <li><a href="#">Deal comparison</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Restaurant</strong>
+                    </h6>
+
+                    <ul class="list-inline">
+                        <li><a href="#">Restaurant</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Company</strong>
+                    </h6>
+
+                    <ul class="list-inline">
+                        <li><a href="#">About quality compare</a></li>
+
+                        <li><a href="#">Press</a></li>
+
+                        <li><a href="#">Jobs</a></li>
+
+                        <li><a href="#">Partners</a></li>
+
+                        <li><a href="#">Register a shop</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-twitter fa-2x"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-google-plus fa-2x"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-linkedin fa-2x"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class=" mx-1">
+                        <i class="fab fa-dribbble fa-2x"> </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="py-3 text-center">
+            © 2018 Copyright:
+            <a href="#"> gomax.com </a>
+        </div>
+    </footer>
 {% endblock %}

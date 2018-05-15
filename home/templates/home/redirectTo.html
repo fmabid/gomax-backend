@@ -1,45 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Redirect</title>
+{% extends 'home/base.html' %}
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/redirect.css">
+{% block extra_css %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'home/css/redirect.css' %}"/>
+{% endblock %}
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
-</head>
-<body>
-<div class="body-bg ml-auto mr-auto">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="item">
-                <img class="rounded img-fluid" src="assets/iphonexdesign-800x669.png">
-            </div>
-        </div>
-
-        <div class="col-md-8">
-            <div class="row r-up">
-                <div class="col-md-4">
-                    <img class="img-fluid dmnd" src="assets/diamond.png"/>
-                </div>
-                <div class="col-md-4 theArrow">
-                    <img class="img-fluid " src="assets/theArrow.png"/>
-                </div>
-                <div class="col-md-4 vend">
-                    <a href="www.google.com"><img class="img-fluid" src="assets/daraz.png"/></a>
+{% block body %}
+    <div class="body-bg ml-auto mr-auto">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="item">
+                    <img class="rounded img-fluid" src="{% static 'home/images/assets/iphonexdesign-800x669.png' %}">
                 </div>
             </div>
 
-            <div class="r-down ml-auto mr-auto">
-                <p class="priceTxt text-center">Starting from <span>$999</span></p>
+            <div class="col-md-8">
+                <div class="row r-up">
+                    <div class="col-md-4">
+                        <img class="img-fluid dmnd" src="{% static 'home/images/assets/diamond.png' %}"/>
+                    </div>
+                    <div class="col-md-4 theArrow">
+                        <img class="img-fluid " src="{% static 'home/images/assets/theArrow.png' %}"/>
+                    </div>
+                    <div class="col-md-4 vend">
+                        <a href="www.google.com"><img class="img-fluid" src="{% static 'home/images/assets/daraz.png' %}"/></a>
+                    </div>
+                </div>
 
-                <p class="text-center txt-grey">Redirecting to www.daraz.com</p>
+                <div class="r-down ml-auto mr-auto">
+                    <p class="priceTxt text-center">Starting from <span>$999</span></p>
+
+                    <p class="text-center txt-grey">Redirecting to www.daraz.com</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</body>
-</html>
+{% endblock %}

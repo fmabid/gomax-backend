@@ -25,6 +25,7 @@ from django.views import generic
 
 
 from home.models import *
+from home.my_extra import nmod
 
 
 # def home(request):
@@ -63,24 +64,65 @@ def product(request, item_id):
     return render(request, 'home/product.html')
 
 
+def team(request):
+    return render(request, 'home/team.html')
+
+
 # class ProductView(generic.DeleteView):
 #     model = ProductsTesting
 #     template_name = 'home/product.html'
 
 
-def adding_product(request, item_id):
-    items = get_object_or_404(ProductsTesting, pk=item_id)
-    return render(request, 'home/adding_product.html')
+def adding_product(request, previtem_id, item_id):
+    item = get_object_or_404(ProductsTesting, pk=item_id)
+    prev_item = get_object_or_404(ProductsTesting, pk=previtem_id)
+
+    all_item = ProductsTesting.objects.all()
+
+    context = {
+        'item': item,
+        'previtem': prev_item,
+        'all_item': all_item,
+    }
+
+    return render(request, 'home/adding_product.html', context)
 
 
 def add_to_compare(request, item_id):
-    items = get_object_or_404(ProductsTesting, pk=item_id)
-    return render(request, 'home/addtocompare.html')
+    item = get_object_or_404(ProductsTesting, pk=item_id)
+    all_item = ProductsTesting.objects.all()
+
+    context = {
+        'item': item,
+        'all_item': all_item,
+    }
+
+    return render(request, 'home/addtocompare.html', context)
 
 
-def comparison(request, item_id):
-    items = get_object_or_404(ProductsTesting, pk=item_id)
-    return render(request, 'home/comparison.html')
+def comparison(request, previtem_id, item_id):
+    global flg
+    all_item = ProductsTesting.objects.all()
+
+    item = get_object_or_404(ProductsTesting, pk=item_id)
+    prev_item = get_object_or_404(ProductsTesting, pk=previtem_id)
+
+    score1 = nmod.get_score(item.cpu, item.gpu, item.chipset)
+    score2 = nmod.get_score(prev_item.cpu, prev_item.gpu, prev_item.chipset)
+
+    if score1 > score2:
+        flg = True
+    elif score1 < score2:
+        flg = False
+
+    context = {
+        'item': item,
+        'previtem': prev_item,
+        'all_item': all_item,
+        'flag': flg,
+    }
+
+    return render(request, 'home/comparison.html', context)
 
 
 def redirect_to(request, item_id):

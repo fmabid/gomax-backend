@@ -24,7 +24,7 @@
                 </div>-->
 
                 <div class="row ml-auto mr-auto list-container">
-                    {% for i in "x"|rjust:"6" %}
+                    {% comment %}{% for i in "x"|rjust:"6" %}
                         <div class="col-md-2 col-sm-2 col-2">
                             <a href="#">
                                 <div class="listElement">
@@ -32,27 +32,27 @@
                                 </div>
                             </a>
                         </div>
-                    {% endfor %}
+                    {% endfor %}{% endcomment %}
 
 
-                    {% comment %}<div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                    <div class="col-md-2 col-sm-2 col-2">
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/icons/coolnes.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/icons/gamepad.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/icons/icon.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/icons/laptop.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/icons/photo-camera.svg' %}" class="img-fluid"></div></a>
                     </div>
                     <div class="col-md-2 col-sm-2 col-2">
-                        <a href="#"><div class="listElement"><img src="{% static 'home/images/assets/refrigerator.svg' %}" class="img-fluid"></div></a>
-                    </div>{% endcomment %}
+                        <a href="#"><div class="listElement"><img src="{% static 'home/images/icons/screen.svg' %}" class="img-fluid"></div></a>
+                    </div>
                 </div>
             </div>
         </div>

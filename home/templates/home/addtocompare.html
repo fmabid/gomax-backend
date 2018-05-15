@@ -15,12 +15,12 @@
             <div class="row">
                 <div class="col-md-5 selecting-section">
                     <div class="card float-right border-0" style="width: 15rem;">
-                        <img class="card-img-top" src="assets/iphonexdesign-800x669.png"  alt="Card image cap">
+                        <img class="card-img-top" src="{{ item.p_image.url }}"  alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Apple Iphone X</h5>
+                            <h5 class="card-title text-center">{{ item.p_name }}</h5>
 
-                            <p class="card-text mb-0">64GB Silver</p>
-                            <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
+                            <p class="card-text mb-0">{{ item.internal_memory }}</p>
+                            <p class="card-preprice">Stating from <strong class="text-primary card-price">${{ item.price }}</strong></p>
                         </div>
                     </div>
                 </div>
@@ -39,61 +39,21 @@
             <h4 class="text-left mb-5 mt-5">Product suggestion</h4>
 
             <div class="row">
-                <div class="col-md-3 selecting-section">
-                    <div class="card float-right border-0" style="width: 15rem;">
-                        <img class="card-img-top" src="assets/iphonexdesign-800x669.png"  alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title text-left">Apple Iphone X</h6>
-                            <p class="card-text">64GB Silver</p>
-                            <div class="text-center">
-                                <a href="adding_product.html" class="btn copm-btn-color w-100">Compare</a>
+                {% for the_item in all_item %}
+                    <div class="col-md-3 selecting-section">
+                        <div class="card float-right border-0" style="width: 15rem;">
+                            <img class="card-img-top" src="{{ the_item.p_image.url }}"  alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-preprice">Stating from <strong class="text-primary card-price">${{ the_item.price }}</strong></p>
+                                <h6 class="card-title text-left">{{ the_item.p_name }}</h6>
+                                <p class="card-text">{{ the_item.internal_memory }}</p>
+                                <div class="text-center">
+                                    <a href="{% url 'home:adding_product' item.id the_item.id %}" class="btn copm-btn-color w-100">Compare</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 selecting-section">
-                    <div class="card float-right border-0" style="width: 15rem;">
-                        <img class="card-img-top" src="assets/14095.png"  alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title text-left">Apple Iphone X</h6>
-                            <p class="card-text">64GB Silver</p>
-                            <div class="text-center">
-                                <a href="adding_product.html" class="btn copm-btn-color w-100">Compare</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 selecting-section">
-                    <div class="card float-right border-0" style="width: 15rem;">
-                        <img class="card-img-top" src="assets/14898.750.png"  alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title text-left">Apple Iphone X</h6>
-                            <p class="card-text">64GB Silver</p>
-                            <div class="text-center">
-                                <a href="adding_product.html" class="btn copm-btn-color w-100">Compare</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 selecting-section">
-                    <div class="card float-right border-0" style="width: 15rem;">
-                        <img class="card-img-top" src="assets/30032523b.png"  alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-preprice">Stating from <strong class="text-primary card-price">$999</strong></p>
-                            <h6 class="card-title text-left">Apple Iphone X</h6>
-                            <p class="card-text">64GB Silver</p>
-                            <div class="text-center">
-                                <a href="adding_product.html" class="btn copm-btn-color w-100">Compare</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
